@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma'soem University</title>
+  <link rel ="icon" type ="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+      <img src="navigasi/logomasoem.png" alt="Logo Ma'soem">
+      </a>
+    </div>
+
+    <!-- GARIS TIGA (HAMBURGER) -->
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <ul class="nav-links" id="nav-links">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Tentang Kami ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="rektor/rektor.html">Salam dari Rektor</a></li>
+          <li><a href="sejarah/sejarah.html">Sejarah</a></li>
+          <li><a href="sejarah/sejarah.html">Visi dan Misi</a></li>
+          <li><a href="dosen/dosen.html">Dosen Ma’soem University</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Fakultas ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="fakultas/febi.html">Fakultas Ekonomi dan Bisnis Islam</a></li>
+          <li><a href="fakultas/fkom.html">Fakultas Komputer</a></li>
+          <li><a href="fakultas/fpet.html">Fakultas Pertanian</a></li>
+          <li><a href="fakultas/fkip.html">Fakultas Keguruan dan Ilmu Politik</a></li>
+          <li><a href="fakultas/ftek.html">Fakultas Teknik</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Informasi ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Tugas Akhir</a></li>
+        </ul>
+      </li>
+
+      <li><a href="lppm.html">LPPM</a></li>
+      <li><a href="siakad.html">SIAKAD</a></li>
+      <li><a href="pendftaran.html">Pendaftaran</a></li>
+      <li><a href="berita.html">Berita</a></li>
+      <li><a href="kontak.html">Kontak Kami</a></li>
+    </ul>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Kata kunci...">
+      <button>🔍</button>
+    </div>
+  </nav>
+
+  <!-- SCRIPT -->
+  <script>
+    // Garis tiga (toggle menu)
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      toggle.classList.toggle('active');
+    });
+
+    // Dropdown di HP: klik untuk buka
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          btn.parentElement.classList.toggle('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1395 @@
+/* --- STYLE DASAR NAVBAR --- */
+header {
+  background-color: #004aad;
+  color: white;
+  position: relative;
+  z-index: 1000;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+.logo {
+  height: 50px;
+}
+
+/* --- MENU UTAMA --- */
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul li {
+  position: relative;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  display: block;
+  font-weight: 500;
+}
+
+.navbar ul li a:hover {
+  background-color: #00337f;
+}
+
+/* --- DROPDOWN LEVEL 1 --- */
+.dropdown-content,
+.sub-dropdown-content {
+  display: none ;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+.dropdown-content li a {
+  color: #000;
+  padding: 10px 15px;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* --- TAMPILKAN DROPDOWN KETIKA HOVER --- */
+.dropdown:hover > .dropdown-content {
+  display: block !important;
+  visibility: visible;
+  opacity: 1;
+}
+/* --- SUB DROPDOWN (LEVEL 2) --- */
+.sub-dropdown {
+  position: relative;
+}
+
+.sub-dropdown-content li a {
+  color: #000;
+  padding: 10px 15px;
+}
+
+.sub-dropdown-content li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* --- TAMPILKAN SUBDROPDOWN --- */
+.sub-dropdown:hover > .sub-dropdown-content {
+  display: block !important;
+  visibility: visible;
+  opacity: 1;
+}
+.dropdown-content {
+  top: 100%;
+  left: 0;
+  background: #004aad;
+  min-width: 230px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+.sub-dropdown-content {
+  top: 0;
+  left: 100%;
+  background: #004aad;
+  min-width: 220px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: 200;
+}
+
+/* --- RESPONSIVE MENU --- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  transition: all 0.3s;
+}
+
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #004aad;
+  }
+
+  .navbar.active ul {
+    display: flex;
+  }
+
+  .navbar ul li {
+    width: 100%;
+  }
+
+  .dropdown-content,
+  .sub-dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: #003b8e;
+  }
+
+  .dropdown-content li a,
+  .sub-dropdown-content li a {
+    color: white;
+  }
+
+  .dropdown:hover > .dropdown-content,
+  .sub-dropdown:hover > .sub-dropdown-content {
+    display: none;
+  }
+
+  /* Buka sub-menu dengan klik di mobile */
+  .navbar ul li.open > .dropdown-content,
+  .navbar ul li.open > .sub-dropdown-content {
+    display: block;
+  }
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background-color: #f9fafc;
+  color: #222;
+}
+h1, h2, h3 {
+  color: #004aad;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+/* HEADER */
+.febi-header {
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=1400&q=80') center/cover;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.febi-header .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 40, 80, 0.6);
+}
+.febi-header .header-content {
+  position: relative;
+  z-index: 2;
+}
+.febi-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* CONTENT */
+.febi-content p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* PROGRAM STUDI */
+.program-studi {
+  background-color: #004aad;
+  color: white;
+  padding: 60px 0;
+}
+.program-studi h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.prodi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+.prodi-card {
+  background: white;
+  color: #004aad;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.prodi-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* VISI MISI */
+.visi-misi h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.visi-box, .misi-box, .tujuan-box {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.visi-box p {
+  font-style: italic;
+}
+ul {
+  margin: 10px 0 0 20px;
+}
+ul li {
+  margin-bottom: 10px;
+}
+
+/* BUTTON */
+.back-btn {
+  text-align: center;
+  padding: 30px;
+}
+.back-btn a {
+  text-decoration: none;
+  background: #004aad;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+.back-btn a:hover {
+  background: #0073ff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .febi-header h1 {
+    font-size: 1.8rem;
+  }
+  .container {
+    width: 95%;
+  }
+}
+/* ===== GENERAL STYLE ===== */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f7ff;
+  color: #222;
+  line-height: 1.7;
+}
+
+/* ===== HEADER BANNER ===== */
+.prodi-banner {
+  position: relative;
+  background: url('../img/febi-banner.jpg') center/cover no-repeat;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-overlay {
+  background: rgba(0, 35, 102, 0.7);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.banner-text {
+  text-align: center;
+  color: #fff;
+}
+
+.banner-text h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.banner-text p {
+  font-size: 16px;
+  margin-top: 8px;
+  color: #f0f0f0;
+}
+
+/* ===== BREADCRUMB ===== */
+.breadcrumb {
+  background: #e8ecff;
+  padding: 10px 5%;
+  font-size: 14px;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #003399;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ===== CONTENT CONTAINER PRODI FEBI===== *//* ===================== *//* ===================== *//* ===================== */
+.prodi-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.prodi-container h1 {
+  color: #003399;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.prodi-container h2 {
+  color: #003399;
+  margin-bottom: 10px;
+}
+
+.intro-section p {
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+/* ===== CAREER CARDS ===== */
+.career-section {
+  margin-top: 40px;
+}
+
+.career-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.career-card {
+  flex: 1 1 250px;
+  background: #003399;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.career-card:hover {
+  background: #00267a;
+  transform: translateY(-5px);
+}
+
+/* ===== VISI & MISI ===== */
+.visi-misi-section {
+  margin-top: 50px;
+}
+
+.visi {
+  font-style: italic;
+  background: #f0f4ff;
+  border-left: 4px solid #003399;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.visi-misi-section ul {
+  margin-top: 15px;
+  padding-left: 25px;
+}
+
+.visi-misi-section li {
+  margin-bottom: 10px;
+}
+
+
+/*  FAKULTAS KOMPUTER    */
+/* ===================== *//* ===================== *//* ===================== *//* ===================== */
+
+/* --- Container utama --- */
+.fkom-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px 30px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.fkom-container h2 {
+  color: #004aad;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+/* --- Visi Misi --- */
+.fkom-visi-misi h3 {
+  color: #004aad;
+  margin-top: 20px;
+}
+
+.fkom-visi-misi p,
+.fkom-visi-misi ol {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* --- Program Studi --- */
+.fkom-prodi {
+  margin-top: 40px;
+}
+
+.fkom-prodi h3 {
+  color: #004aad;
+  margin-bottom: 20px;
+}
+
+.fkom-prodi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.fkom-prodi-card {
+  background: white;
+  border: 2px solid #004aad;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.fkom-prodi-card:hover {
+  background: #004aad;
+  color: white;
+  transform: translateY(-5px);
+}
+
+.fkom-prodi-card h4 {
+  margin: 0;
+  font-size: 18px;
+}
+/*  PRODI SISTEM INFORMASI  */
+/* ===================== *//* ===================== *//* ===================== *//* ===================== *//* ===================== */
+
+.si-back-btn {
+  padding: 15px 30px;
+}
+
+.si-back-btn a {
+  color: #004aad;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.si-back-btn a:hover {
+  text-decoration: underline;
+}
+.si-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.si-container h2 {
+  color: #004aad;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.si-content p {
+  line-height: 1.7;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.si-content h3 {
+  color: #004aad;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.si-content ul, .si-content ol {
+  margin-left: 25px;
+  line-height: 1.8;
+  color: #333;
+  font-size: 16px;
+}
+
+.si-content ul li::marker {
+  color: #004aad;
+}
+/* ======== FAKULTAS KOMPUTER - BISNIS DIGITAL (FKOM BD) ======== *//* ===================== *//* ===================== *//* ===================== */
+.fkom-bd {
+  background: #f9fafc;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+.fkom-bd-container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.fkom-bd h1 {
+  color: #004aad;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #004aad;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.fkom-bd h2 {
+  margin-top: 30px;
+  color: #003b8e;
+}
+
+.fkom-bd p {
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+.fkom-bd blockquote {
+  font-style: italic;
+  color: #004aad;
+  background: #eef5ff;
+  border-left: 4px solid #004aad;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.fkom-bd ol {
+  margin-left: 20px;
+  line-height: 1.8;
+}
+/* ======== FAKULTAS KOMPUTER - KOMPUTERISASI AKUNTANSI (FKOM KA) ======== *//* ===================== *//* ===================== */
+.fkom-ka {
+  background: #f9fafc;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+.fkom-ka-container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.fkom-ka h1 {
+  color: #004aad;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #004aad;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.fkom-ka h2 {
+  margin-top: 30px;
+  color: #003b8e;
+}
+
+.fkom-ka p {
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+ blockquote {
+  font-style: italic;
+  color: #004aad;
+  background: #eef5ff;
+  border-left: 4px solid #004aad;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.fkom-ka ol, 
+.fkom-ka ul {
+  margin-left: 20px;
+  line-height: 1.8;
+}
+
+/* ======== FAKULTAS PERTANIAN (FPET) ======== */
+.fpet {
+  background: #f9fafc;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+.fpet-container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.fpet h1 {
+  color: #2e7d32; /* hijau pertanian */
+  margin-bottom: 20px;
+  border-bottom: 3px solid #2e7d32;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.fpet h2, .fpet h3 {
+  margin-top: 30px;
+  color: #1b5e20;
+}
+
+.fpet p {
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+
+.fpet blockquote {
+  font-style: italic;
+  color: #2e7d32;
+  background: #eaf7ec;
+  border-left: 4px solid #2e7d32;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.fpet ul {
+  margin-left: 20px;
+  line-height: 1.8;
+}
+
+.fpet-prodi-list {
+  list-style: none;
+  padding: 0;
+}
+
+.fpet-prodi-list li {
+  margin-bottom: 8px;
+}
+
+.fpet-prodi-list a {
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.fpet-prodi-list a:hover {
+  text-decoration: underline;
+}
+
+/* ======== PRODI AGRIBISNIS (FPET-AGRI) ======== */ /*======== */ /*======== *//*======== *//*======== */
+.fpet-agri {
+  background: #f8faf9;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+.fpet-agri-container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.fpet-agri h1 {
+  color: #2e7d32;
+  border-bottom: 3px solid #2e7d32;
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+}
+
+.fpet-agri h2, .fpet-agri h3 {
+  color: #1b5e20;
+  margin-top: 30px;
+}
+
+.fpet-agri p {
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.fpet-agri ul {
+  margin-left: 20px;
+  line-height: 1.8;
+}
+/* ======== PRODI TEKNOLOGI PANGAN (FPET-TP) ======== */
+.fpet-tp {
+  background: #fafdf9;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+.fpet-tp-container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.fpet-tp h1 {
+  color: #558b2f;
+  border-bottom: 3px solid #558b2f;
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+}
+
+.fpet-tp h2, .fpet-tp h3 {
+  color: #33691e;
+  margin-top: 30px;
+}
+
+.fpet-tp p {
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.fpet-tp ul {
+  margin-left: 20px;
+  line-height: 1.8;
+}
+/* ======== FAKULTAS FKIP ======== *//*======== *//*======== *//*======== */
+/* ======== FKIP (Fakultas Keguruan & Ilmu Pendidikan) ======== */
+.fkip {
+  background: #fdfaf7;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+.fkip-container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.fkip h1 {
+  color: #8e44ad;
+  border-bottom: 3px solid #8e44ad;
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+}
+
+.fkip p {
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+.fkip-prodi-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.fkip-prodi {
+  display: block;
+  background: #f5f0ff;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #4a235a;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.fkip-prodi:hover {
+  background: #8e44ad;
+  color: white;
+  transform: translateY(-5px);
+}
+/* ======== PBI (Pendidikan Bahasa Inggris) ======== */
+.pbi {
+  background-color: #f8f9ff;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+.pbi-container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.pbi h1 {
+  color: #2c3e50;
+  border-bottom: 3px solid #2c3e50;
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+}
+
+.pbi h2 {
+  color: #34495e;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.pbi p {
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.pbi ul, .pbi ol {
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
+
+.pbi li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+/* ======== BK (Bimbingan dan Konseling) ======== */
+.bk {
+  background-color: #f9f9ff;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+.bk-container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.bk h1 {
+  color: #2e4a7d;
+  border-bottom: 3px solid #2e4a7d;
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+}
+
+.bk h2 {
+  color: #34495e;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.bk p {
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.bk ol {
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
+
+.bk li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+/* ======== FTEK (Fakultas Teknik) ======== */
+.ftek {
+  background: linear-gradient(180deg, #e6eef7 0%, #ffffff 100%);
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+  color: #1a1a1a;
+}
+
+.ftek-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ftek-header h1 {
+  font-size: 2.5em;
+  color: #1d3557;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ftek-header .tagline {
+  font-style: italic;
+  color: #457b9d;
+  font-size: 1.1em;
+}
+
+.ftek-container {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  padding: 50px;
+  border-radius: 14px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+.ftek h2 {
+  color: #1d3557;
+  margin-top: 40px;
+  border-left: 5px solid #457b9d;
+  padding-left: 10px;
+}
+
+.ftek p, .ftek li {
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 12px;
+}
+
+.ftek ol {
+  margin-left: 25px;
+}
+
+.prodi-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.prodi-card {
+  flex: 1;
+  min-width: 280px;
+  background: #f8fbff;
+  border: 1px solid #dce6f2;
+  border-radius: 12px;
+  padding: 25px;
+  transition: 0.3s ease;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.prodi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.prodi-card h3 {
+  color: #1d3557;
+  margin-bottom: 10px;
+}
+
+.btn-prodi {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 20px;
+  border-radius: 6px;
+  background: #1d3557;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95em;
+  transition: 0.3s;
+}
+
+.btn-prodi:hover {
+  background: #457b9d;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .prodi-cards {
+    flex-direction: column;
+  }
+}
+/* ======== INFORMATIKA ======== */
+.informatika {
+  background: linear-gradient(180deg, #0b132b 0%, #1c2541 60%, #3a506b 100%);
+  color: #f0f4f8;
+  font-family: "Poppins", sans-serif;
+  padding: 60px 20px;
+}
+
+.informatika-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.informatika-header h1 {
+  font-size: 2.8em;
+  color: #5bc0be;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(91, 192, 190, 0.6);
+}
+
+.informatika-header .subtitle {
+  font-size: 1.2em;
+  color: #ffffffa8;
+  margin-bottom: 10px;
+}
+
+.informatika-header .tagline {
+  font-style: italic;
+  color: #a3cef1;
+  font-size: 1em;
+}
+
+.informatika-content {
+  max-width: 900px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  padding: 40px 50px;
+  border-radius: 14px;
+  box-shadow: 0 0 30px rgba(91, 192, 190, 0.15);
+}
+
+.informatika h2 {
+  color: #5bc0be;
+  border-left: 5px solid #5bc0be;
+  padding-left: 10px;
+  margin-top: 40px;
+}
+
+.informatika p,
+.informatika li {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #e0e6ed;
+  text-align: justify;
+}
+
+.informatika ol,
+.informatika ul {
+  margin-left: 25px;
+}
+
+.informatika ul li::marker {
+  color: #5bc0be;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .informatika-content {
+    padding: 25px;
+  }
+
+  .informatika-header h1 {
+    font-size: 2em;
+  }
+}
+/* ======== TEKNIK INDUSTRI ======== */
+.industri {
+  background: linear-gradient(180deg, #1b1b1b 0%, #2c2c2c 40%, #3a506b 100%);
+  color: #f4f4f4;
+  font-family: "Poppins", sans-serif;
+  padding: 60px 20px;
+}
+
+.industri-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.industri-header h1 {
+  font-size: 2.8em;
+  color: #fca311;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(252, 163, 17, 0.6);
+}
+
+.industri-header .subtitle {
+  font-size: 1.2em;
+  color: #ffffffa8;
+  margin-bottom: 10px;
+}
+
+.industri-header .tagline {
+  font-style: italic;
+  color: #cfd3d8;
+  font-size: 1em;
+}
+
+.industri-content {
+  max-width: 900px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  padding: 40px 50px;
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(52, 252, 17, 0.15);
+}
+
+.industri h2 {
+  color: #fca311;
+  border-left: 5px solid #fca311;
+  padding-left: 10px;
+  margin-top: 40px;
+}
+
+.industri p,
+.industri li {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+  text-align: justify;
+}
+
+.industri ol,
+.industri ul {
+  margin-left: 25px;
+}
+
+.industri ul li::marker {
+  color: #fca311;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .industri-content {
+    padding: 25px;
+  }
+
+  .industri-header h1 {
+    font-size: 2em;
+  }
+}
+/* ===== Fakultas Teknik Header ===== */
+.fk-header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+
+.fk-header img {
+  width: 75%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  filter: brightness(80%);
+}
+
+/* Overlay text di atas gambar */
+.fk-overlay {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  color: white;
+  text-align: left;
+}
+
+.fk-overlay h3 {
+  background-color: #003366;
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.fk-overlay h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-top: 10px;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fk-overlay {
+    top: 25%;
+    left: 5%;
+  }
+  .fk-overlay h1 {
+    font-size: 2.2rem;
+  }
+}
+/* ===== SPONSOR SECTION ===== */
+.sponsor {
+  background-color: #2e3a4e;
+  padding: 25px 0;
+  text-align: center;
+}
+
+.sponsor-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-align: left;
+  margin-left: 65px;
+}
+.sponsor-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.sponsor-logos img {
+  height: 60px;
+  max-width: 200px;
+  object-fit: contain;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.sponsor-logos img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+.sponsor-logos a {
+  display: inline-block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.sponsor-logos a:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* ===== FOOTER SECTION ===== */
+.footer {
+  background-color: #253044;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 30px;
+}
+
+.footer-left {
+  flex: 1;
+  min-width: 150px;
+}
+
+.footer-logo {
+  width: 130px;
+}
+
+.footer-center {
+  flex: 2;
+  font-size: 14px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.footer-center p strong {
+  font-size: 16px;
+  color: #fff;
+}
+
+.footer-right {
+  flex: 1;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.15);
+}
+
+.qr-code img {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .sponsor-logos img {
+    height: 45px;
+    max-width: 90px;
+    align-items: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left, .footer-center, .footer-right {
+    flex: unset;
+  }
+
+  .footer-center p {
+    margin: 5px 0;
+  }
+}
